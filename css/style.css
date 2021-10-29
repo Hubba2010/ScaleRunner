@@ -1,3 +1,57 @@
+@-webkit-keyframes pulse {
+  from {
+    -webkit-box-shadow: 0 0 0 0 #afafaf;
+            box-shadow: 0 0 0 0 #afafaf;
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-box-shadow: 0 0 0 0 #afafaf;
+            box-shadow: 0 0 0 0 #afafaf;
+  }
+}
+
+@-webkit-keyframes heroTextAppear {
+  from {
+    margin-top: 300px;
+    -webkit-transform: scale(10%);
+            transform: scale(10%);
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+@keyframes heroTextAppear {
+  from {
+    margin-top: 300px;
+    -webkit-transform: scale(10%);
+            transform: scale(10%);
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+@-webkit-keyframes upNdown {
+  from {
+    top: calc(100% + 35px);
+  }
+  to {
+    top: calc(100% + 45px);
+  }
+}
+
+@keyframes upNdown {
+  from {
+    top: calc(100% + 35px);
+  }
+  to {
+    top: calc(100% + 45px);
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -170,10 +224,8 @@ nav .toggler .inner-circle {
   height: 18px;
   background-color: #fff;
   border-radius: 50%;
-  -webkit-transition: background-color 0.2s ease-in-out,
- margin-left 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out,
- margin-left 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, margin-left 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, margin-left 0.2s ease-in-out;
 }
 
 .toggler.active > .inner-circle {
@@ -810,60 +862,6 @@ footer p .links i {
 footer p .links a {
   text-decoration: none;
   color: #fff9d7;
-}
-
-@-webkit-keyframes pulse {
-  from {
-    -webkit-box-shadow: 0 0 0 0 #afafaf;
-            box-shadow: 0 0 0 0 #afafaf;
-  }
-}
-
-@keyframes pulse {
-  from {
-    -webkit-box-shadow: 0 0 0 0 #afafaf;
-            box-shadow: 0 0 0 0 #afafaf;
-  }
-}
-
-@-webkit-keyframes heroTextAppear {
-  from {
-    margin-top: 300px;
-    -webkit-transform: scale(10%);
-            transform: scale(10%);
-  }
-  to {
-    margin-top: 0;
-  }
-}
-
-@keyframes heroTextAppear {
-  from {
-    margin-top: 300px;
-    -webkit-transform: scale(10%);
-            transform: scale(10%);
-  }
-  to {
-    margin-top: 0;
-  }
-}
-
-@-webkit-keyframes upNdown {
-  from {
-    top: calc(100% + 35px);
-  }
-  to {
-    top: calc(100% + 45px);
-  }
-}
-
-@keyframes upNdown {
-  from {
-    top: calc(100% + 35px);
-  }
-  to {
-    top: calc(100% + 45px);
-  }
 }
 
 @media (max-width: 768px) {
