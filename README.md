@@ -7,7 +7,7 @@
 
 ✔ The app will be upgraded regularly so stay tuned for updates ❗
 
-👉 If you find some bugs in the code or interesting ideas, feel free to contact me through e-mail: Hubert.Barecki@onet.pl 
+👉 If you find some bugs in the code or come up with some interesting ideas, feel free to contact me through e-mail: Hubert.Barecki@onet.pl 
 
 
 
