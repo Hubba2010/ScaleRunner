@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScaleRunner - Apka dla początkujących gitarzystów</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon_guitar.png" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/ebdb8dd391.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-icon">
+            <a href="./basics.html">
+                <img src="./img/favicon_guitar.png" alt="Logo - żółta główka gitary elektrycznej">
+            </a>
+        </div>
+        <div class="nav-items">
+            <a href="./index.html">Strona główna</a>
+            <div class="dropdown">
+                <a href="#">Ćwiczenia <i class="fas fa-sort-down"></i></a>
+                <div class="dropdown-content z-increased">
+                    <a class="training active-exercise" style="display: none;" href="#">hidden</a>
+                    <a class="training" href="#exercise">5 prostych popularnych melodii</a>
+                    <a class="training" href="#exercise">Chromatyka</a>
+                    <a class="training" href="#exercise">Ćwiczenia na lewą rękę</a>
+                    <a class="training" href="#exercise">Ćwiczenia na kostkowanie</a>
+                    <a class="training" href="#exercise">Ćwiczenia rytmiczne</a>
+                    <a class="training" href="#exercise">Pająki</a>
+                    <a class="training" href="#exercise">Hammer-on'y i Pull-off'y</a>
+                    <a class="training" href="#exercise">Bendy</a>
+                    <a class="training" href="#exercise">Pomijanie strun</a>
+                    <a class="training" href="#exercise">Sweep Picking</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Skale <i class="fas fa-sort-down"></i></a>
+                <div class="dropdown-content z-increased">
+                    <a class="training" href="#exercise">Pentatoniki</a>
+                    <a class="training" href="#exercise">Skale Modalne</a>
+                    <a class="training" href="#exercise">Pasaże</a>
+                    <a class="training" href="#exercise">Harmoniczny mol</a>
+                    <a class="training" href="#exercise">Melodyczny mol</a>
+                </div>
+            </div><a href="./chords.html">Akordy</a>
+        </div>
+
+        <button class="metronome-btn">Metronom
+            <span class="toggle-btn-container">
+                <span class="toggler active">
+                    <span class="inner-circle">
+                    </span>
+                </span>
+            </span>
+        </button>
+        <button class="nav-hamburger nav-btn"><i class="fas fa-bars"></i></button>
+
+
+        <div class="hamburger__menu hide-menu z-increased">
+            <button class="close-menu-btn hidden nav-btn"><i class="fas fa-times"></i></button>
+            <ul class="menu__list">
+                <li><span class="metronome-toggle__responsive">Metronom <i class="fas fa-toggle-on"></i></span></li>
+                <li><span><a href="./index.html">Strona główna</a></span></li>
+                <li><button class="dropdown-responsive__btn">Ćwiczenia <i class="fas fa-sort-down"></i></button>
+                    <div class="dropdown-responsive">
+                        <a class="training active-exercise" style="display: none;" href="#">hidden</a>
+                        <a class="training" href="#exercise">5 prostych popularnych melodii</a>
+                        <a class="training" href="#exercise">Chromatyka</a>
+                        <a class="training" href="#exercise">Ćwiczenia na lewą rękę</a>
+                        <a class="training" href="#exercise">Ćwiczenia na kostkowanie</a>
+                        <a class="training" href="#exercise">Ćwiczenia rytmiczne</a>
+                        <a class="training" href="#exercise">Pająki</a>
+                        <a class="training" href="#exercise">Hammer-on'y i Pull-off'y</a>
+                        <a class="training" href="#exercise">Bendy</a>
+                        <a class="training" href="#exercise">Pomijanie strun</a>
+                        <a class="training" href="#exercise">Sweep Picking</a>
+                    </div>
+                </li>
+                <li><button class="dropdown-responsive__btn">Skale <i class="fas fa-sort-down"></i></button>
+                    <div class="dropdown-responsive">
+                        <a class="training" href="#exercise">Pentatoniki</a>
+                        <a class="training" href="#exercise">Skale Modalne</a>
+                        <a class="training" href="#exercise">Pasaże</a>
+                        <a class="training" href="#exercise">Harmoniczny mol</a>
+                        <a class="training" href="#exercise">Melodyczny mol</a>
+                    </div>
+                </li>
+                <li><span><a href="./chords.html">Akordy</a></span></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="hero-bg">
+        </div>
+        <div class="hero-text">
+            <h1>ScaleRunner</h1>
+            <p>Nie trać czasu i bierz się za schredowanie!</p>
+        </div>
+    </header>
+    <div class="metronome__container" id="clicker">
+        <div class="metronome-bg"></div>
+        <div class="metronome">
+            <div class="bpm-display">
+                <span class="tempo">140</span>
+                <span class="bpm">UNM</span>
+            </div>
+            <div class="tempo-settings">
+                <div class="adjust-tempo-btn decrease-tempo">-</div>
+                <input type="range" min="20" max="280" step="1" class="slider">
+                <div class="adjust-tempo-btn increase-tempo">+</div>
+            </div>
+            <div class="start-stop">START</div>
+            <div class="measures">
+                <div class="subtract-beats stepper">-</div>
+                <div class="measure-count">4</div>
+                <div class="add-beats stepper">+</div>
+            </div>
+            <span class="beats-per-measure-text">Uderzenia na akcent</span>
+        </div>
+
+    </div>
+
+
+
+
+    <main class="main-content">
+        <div id="home">
+            <section class="part-1">
+                <div class="container">
+                    <h2 class="section-title">Podstawy gry na gitarze cz. 1</h2>
+                    <h3 class="section-subtitle" style="font-weight: 900;">Strojenie gitary
+                    </h3>
+                    <p>Jak pewnie wiesz, standardowa gitara ma <b>6</b> strun. <b>3</b> z nich są <b> basowe </b> i
+                        <b>3</b>
+                        są
+                        <b>wiolinowe</b> a ich
+                        kolejność od najgrubszej do najcieńszej idzie następująco:
+                    </p>
+                    <p><span style="font-weight: 900;">E A D G B E</span></p>
+                    <div class="strings"><img src="./img/ebgdae.jpg" style="filter: grayscale(70%);"
+                            alt="Struny po kolei - E A D G B E">
+                    </div>
+                    <p>Łatwo można zauważyć, że istnieją dwie struny E, jednak to <span class="strong">nie są te same
+                            struny! Zapamiętaj dobrze
+                            ich kolejność! </span> Ich znajomość będzie Ci później potrzebna przy pracy z stroikiem, aby
+                        nie
+                        pomylić
+                        dźwięków przy strojeniu wiosła. </p>
+                    <br>
+                    <p><span class="strong">Gitarę można stroić na wiele sposobów:</span></p>
+
+                    <div class="tune">
+                        <h3 class="section-subtitle" style="font-weight: 900; font-size: 28px;">APLIKACJA
+                        </h3>
+                        <img src="./img/tuner1.jpg" width="220px" alt="Zdjęcie aplikacji GuitarTuna w telefonie">
+                    </div>
+                    <div class="tune">
+                        <h3 class="section-subtitle" style="font-weight: 900; font-size: 28px;">ELEKTRONICZNY STROIK
+                        </h3>
+                        <img src="./img/tuner2.jpg" width="220px" alt="Zdjęcie elektronicznego stroika">
+                    </div>
+                    <div class="tune">
+                        <h3 class="section-subtitle" style="font-weight: 900; font-size: 28px;">STROJENIE ZE SŁUCHU
+                        </h3>
+                        <img src="./img/tuner3.jpg" width="220px" alt="Rozpiska dla ludzi którzy stroją ze słuchu">
+                        <p>Źródło: classicalguitarshed.com</p>
+                    </div>
+                    <p>Strojenie za pomocą aplikacji, bądź stroika elektronicznego jest relatywnie proste - wystarczy
+                        wiedzieć do jakiego dźwięku stroimy i wstrzelić się tak, aby być jak najbliżej zera (aplikacje)
+                        lub
+                        żeby wskaźnik był jak najbliżej środka (stroiki z zakresem). W przypadku strojenia ze słuchu
+                        jest
+                        dużo trudniej, ponieważ albo trzeba znać barwę danego dźwięku <span class="strong">"na
+                            pamięć"</span>, albo kierować się
+                        <span class="strong">schematem
+                            5-5-5-4-5</span> (patrz powyżej). Schemat ten polega na tym, iż piąty próg grubszej struny
+                        powinien brzmieć
+                        TAK SAMO jak następna pusta struna, a więc wystarczy nam poprawnie nastrojona jedna struna i do
+                        niej
+                        dopasowywać resztę. Wyjątek stanowi struna G, gdzie dźwięk z następnej struny powinien znajdować
+                        się
+                        na <span class="strong">4 progu.</span>
+                    </p>
+
+
+
+
+
+
+
+
+
+                    <h3 class="section-subtitle" style="font-weight: 900;">Zmiana strun w gitarze klasycznej /
+                        elektrycznej
+                    </h3>
+                    <p>Wbrew pozorem, wymiana strun nie jest tak straszliwa jak Ci się wydaje. Z tym poradnikiem, nawet
+                        dziecko z przedszkola sobie poradzi - oczywiście pod warunkiem, że będzie przestrzegało paru
+                        cennych
+                        wskazówek w tej części. Przede wszystkim, przed założeniem swojego pierwszego
+                        kompletu strun, warto wpierw poćwiczyć na starych strunach, parę razy je założyć i ściągnąć aby
+                        nabrać odpowiedniej wprawy, ponieważ źle założone struny mogą przede wszystkim wpłynąć na
+                        nieprawidłowe
+                        strojenie gitary lub na ciągłe wahania stroju.</p>
+                    <h3 class="section-subtitle">Ważne kwestie dotyczące wymiany strun</h3>
+                    <p><b>1.</b> Chcąc mieć, pełne i jednakowe brzmienie gitary, zakładaj zawsze cały
+                        komplet
+                        naraz, ponieważ wymiana strun sztuka po sztuce, gdy każda z innej parafii, może spowodować iż
+                        gitara
+                        będzie nierówno wybrzmiewała
+                        lub
+                        dźwięk w gitarze będzie po prostu wyraźnie pogorszony, ale nie marnuj pieniędzy na nowy komplet,
+                        kiedy tuż po zmianie pójdzie pojedyncza sztuka... o ile nie masz w zapasie struny o tej samej
+                        grubości!
+                    </p>
+                    <p> <b>2.</b> Musisz znać różnicę między gitarą <b>akustyczną</b>, a <b>klasyczną</b>. Różnic jest
+                        niewiele choć
+                        musisz
+                        wiedzieć, że gitara akustyczna wykorzystuje struny <b>metalowe</b>, zaś klasyczna -
+                        <b>nylonowe</b>.
+                        Struny
+                        nylonowe mają to do siebie, że brzmią delikatniej i mniej metalicznie niż te drugie, jednak są
+                        bardziej podatne na rozstrojenia. Ponadto korpus gitary akustycznej jest często trochę większy
+                        niż
+                        gitary klasycznej. Podstrunnica w gitarze akustycznej jest węższa, ponieważ gitara ta, jest
+                        dostosowana do grania akordów. Gitary klasyczne mają szerszą podstrunnicę, na której łatwiej
+                        jest
+                        grać jednocześnie główną melodię i linię podkładu.
+                    </p>
+                    <p><span style="font-weight: 900; text-shadow: 1px 1px red;">NIE MONTUJ METALOWYCH STRUN W GITARZE
+                            KLASYCZNEJ!!!</span> Jeśli chcesz zniszczyć sobie gitarę klasyczną, dobrym pomysłem jest
+                        założenie na nią strun
+                        metalowych, ponieważ mają silniejszy naciąg i łatwo mogą zniszczyć gryf w gitarze klasycznej.
+                    </p>
+                    <p> <b>3.</b> Decydując się na ściągnięcie całego kompletu strun pamiętaj o jednej
+                        zasadzie
+                        –
+                        struny ściągaj naprzemiennie. Celem jest aby gryf pozostał w symetrycznej pozycji. Zacznij
+                        najpierw
+                        od luzowania obu strun E (bas i wiolin), następnie
+                        A i B, a na środkowe D oraz G. W tej samej kolejności ściągaj struny z gitary.
+                        Montując struny i strojąc je, postępuj tak samo - najpierw zewnętrzne, a te bliżej środka.</p>
+                    <p> <b>4.</b> Grubość strun ma znaczenie! Jeśli chcesz grać cięższe brzmienia lub obniżać strój
+                        gitary,
+                        zakładaj grubsze struny. Grube struny są z reguły silniej naprężone i dzięki temu możesz
+                        pozwolić
+                        sobie na obniżenie stroju nawet o kilka progów w dół, a struny nie będę latały jak flaki przy
+                        każdym
+                        uderzeniu. </p>
+                    <h3 class="section-subtitle">Typowe grubości strun - od najcieńszych do najgrubszych</h3>
+                    <div class="strings"><img src="./img/string-thickness-chart.jpg"
+                            alt="Tabela z różnymi grubościami strun od extra cienkich po heavy"></div>
+                    <p>Dla tych, którzy nie wiedzą o co chodzi z powyższą tabelką - podane są tutaj nominalne grubości,
+                        które są mierzone w tysięcznych częściach cala. Dla przykładu: struna .12 posiada grubość równą
+                        0.012 cala. Warto wiedzieć, że wybierając komplet strun, podaje się grubość tej najcieńszej.
+                        Kiedy
+                        idziesz do muzycznego i mówisz: "Poproszę struny dwunastki!", wszyscy w sklepie od razu wiedzą,
+                        że
+                        będziesz grał ciężki metal. </p>
+                    <h3 class="section-subtitle">Jak je wymienić.....?</h3>
+                    <p> <b>1.</b> Istotna jest ilość zwojów (owinięć kołka przez strunę). Normatywnie dla strun basowych
+                        powinno się nawinąć ok. 2 zwoje, zaś dla wiolinowych około 4. Niewystarczająca ilość zwojów,
+                        może w
+                        przyszłości skutkować problemami z trzymaniem stroju przez gitarę.</p>
+                    <p> <b>2.</b> Po wstępnym nastrojeniu gitary zawsze każdą ze strun ręcznie naciągaj (z wyczuciem!)
+                        aby
+                        się dobrze
+                        ułożyła na
+                        kluczach oraz mostku. Zrób tak kilka razy, a możesz uniknąć potem nagłego rozstrojenia gitary po
+                        ewentualnych podciągnięciach strun.</p>
+                    <p> <b>3.</b> Nawijając strunę, utrzymuj ją w stałym napięciu aby prawidłowo ułożyła się na
+                        kołeczku.
+                        Obserwuj w międzyczasie czy struna leży na siodełku! Jest to element łączący główkę i gryf
+                        gitary.
+                    </p>
+                    <p> <b>4.</b> Aby ułatwić sobie nawijanie strun warto zaopatrzyć się w specjalną korbkę, dzięki
+                        której
+                        zdecydowanie szybciej wymienisz struny i nie zmęczysz się.... aż tak.</p>
+                    <div class="film"><iframe src="https://www.youtube.com/embed/szI4yzxssMM"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+            </section>
+            <section class="part-2">
+                <div class="container">
+                    <h2 class="section-title">Podstawy gry na gitarze cz. 2</h2>
+                    <h3 class="section-subtitle" style="font-weight: 900;">Jak trzymać kostkę do gitary i jaką dobrać?
+                    </h3>
+                    <p>Zdecydowanie najważniejsze zagadnienie dla początkujących shrederów. Możesz spotkać się z wieloma
+                        sposobami trzymania kostki do gitary i bardzo ciężko wskazać “ten właściwy”. Oto najczęściej
+                        stosowany przez nauczycieli gitary schemat: </p>
+                    <div class="strings"><img src="./img/pick.jpg" style="filter: sepia(50%);" height="auto"
+                            width="auto" alt="Zdjęcie pokazujące jak trzymać prawidłowo kostkę do gitary">
+                    </div>
+
+                    <p><b>Kostka powinna leżeć między palcem wskazującym, a kciukiem (prostopadle do niego). Trzymając
+                            kostkę, palec wskazujący
+                            powinien być zgięty w dwóch miejsach pod kątem 90-110 stopni.</b></p>
+                    <p> Wybór kostki pozostaje kwestią indywidualną, a co za tym idzie - wiele zależy od stylu gry.
+                        Niektórzy
+                        preferują twarde metalowe kostki, inni zaś - giętkie plastikowe i radzą sobie nie gorzej niż
+                        Ci pierwsi. Najlepiej spróbować każdą kostką i dopiero po czasie stwierdzić, którą gra się nam
+                        najlepiej. Ukłon w stronę <b> Brian'a May'a</b>, gitarzysty legendarnego zespołu <b>Queen</b>,
+                        który grywał na koncertach <b>monetą</b>!</p>
+                    <h3 class="section-subtitle" style="font-weight: 900;">Prawidłowa praca lewej ręki
+                    </h3>
+                    <p>Tutaj najważniejsze jest ułożenie i praca palców. Palce lewej ręki powinny z wyczuciem dotykać
+                        blisko
+                        końcówki progu i tak, aby nie zahaczać innych strun, dlatego palce nie powinny "leżeć" wszerz
+                        gryfu
+                        (chyba że grasz akordy barowe, ale do tego dojdziesz w swoim czasie),
+                        a stać niezależnie - każdy na swojej strunie i swoim progu. Będzie to niezbędne podczas grania
+                        akordów z pustymi strunami. Pamiętaj o rozluźnieniu palców, nie mogą one się usztywniać. Staraj się też jak najmniej biegać po gryfie i w razie większych interwałów (odległości dźwięków) przechodzić na inne struny. Na początku przygody z gitarą będzie Ci ciężko to utrzymać, ale
+                        głowa do
+                        góry!
+                        <b> Nie zniechęcaj się i
+                            regularnie ćwicz </b>, a z czasem palce będą się same poprawnie układały do grania.
+                    </p>
+
+                    <p class="last-paragraph"><b>Nie trać czasu i przejdź do sekcji ĆWICZENIA! :)</b></p>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </main>
+
+
+    <footer>
+        <p> <span class="copyright">© Hubert Barecki <span class="date__year"></span> Wszelkie Prawa Zastrzeżone</span> <span
+                class="links">ScaleRunner.pl</span><span class="links"> <a href="https://github.com/Hubba2010" target="_blank"><i
+                        class="fab fa-github-square"></i></a> <a href="#"><i class="fab fa-linkedin"></i></a></span>
+        </p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/metronome.js" type="module"></script>
+</body>
+
+</html>

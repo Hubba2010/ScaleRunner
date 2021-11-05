@@ -1,0 +1,24 @@
+@keyframes pulse {
+	from {
+		box-shadow: 0 0 0 0 rgb(175, 175, 175);
+	}
+}
+
+@keyframes heroTextAppear {
+	from {
+		margin-top: 300px;
+		transform: scale(10%);
+	}
+	to {
+		margin-top: 0;
+	}
+}
+
+@keyframes upNdown {
+	from {
+		top: calc(100% + 35px);
+	}
+	to {
+		top: calc(100% + 45px);
+	}
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScaleRunner - Apka dla początkujących gitarzystów</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon_guitar.png" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/ebdb8dd391.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-icon">
+            <a href="#" onclick="refreshPage()">
+                <img src="./img/favicon_guitar.png" alt="Logo - żółta główka gitary elektrycznej">
+            </a>
+        </div>
+        <div class="nav-items">
+            <a href="./basics.html">Podstawy gry na gitarze</a>
+            <div class="dropdown">
+                <a href="#">Ćwiczenia <i class="fas fa-sort-down"></i></a>
+                <div class="dropdown-content z-increased">
+                    <a class="training active-exercise" style="display: none;" href="#">hidden</a>
+                    <a class="training" href="#exercise">5 prostych popularnych melodii</a>
+                    <a class="training" href="#exercise">Chromatyka</a>
+                    <a class="training" href="#exercise">Ćwiczenia na lewą rękę</a>
+                    <a class="training" href="#exercise">Ćwiczenia na kostkowanie</a>
+                    <a class="training" href="#exercise">Ćwiczenia rytmiczne</a>
+                    <a class="training" href="#exercise">Pająki</a>
+                    <a class="training" href="#exercise">Hammer-on'y i Pull-off'y</a>
+                    <a class="training" href="#exercise">Bendy</a>
+                    <a class="training" href="#exercise">Pomijanie strun</a>
+                    <a class="training" href="#exercise">Sweep Picking</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Skale <i class="fas fa-sort-down"></i></a>
+                <div class="dropdown-content z-increased">
+                    <a class="training" href="#exercise">Pentatoniki</a>
+                    <a class="training" href="#exercise">Skale Modalne</a>
+                    <a class="training" href="#exercise">Pasaże</a>
+                    <a class="training" href="#exercise">Harmoniczny mol</a>
+                    <a class="training" href="#exercise">Melodyczny mol</a>
+                </div>
+            </div><a href="./chords.html">Akordy</a>
+        </div>
+
+        <button class="metronome-btn">Metronom
+            <span class="toggle-btn-container">
+                <span class="toggler active">
+                    <span class="inner-circle">
+                    </span>
+                </span>
+            </span>
+        </button>
+        <button class="nav-hamburger nav-btn"><i class="fas fa-bars"></i></button>
+
+
+        <div class="hamburger__menu hide-menu z-increased">
+            <button class="close-menu-btn hidden nav-btn"><i class="fas fa-times"></i></button>
+            <ul class="menu__list">
+                <li><span class="metronome-toggle__responsive">Metronom <i class="fas fa-toggle-on"></i></span></li>
+                <li><span><a href="./basics.html">Podstawy gry</a></span></li>
+                <li><button class="dropdown-responsive__btn">Ćwiczenia <i class="fas fa-sort-down"></i></button>
+                    <div class="dropdown-responsive">
+                        <a class="training active-exercise" style="display: none;" href="#">hidden</a>
+                        <a class="training" href="#exercise">5 prostych popularnych melodii</a>
+                        <a class="training" href="#exercise">Chromatyka</a>
+                        <a class="training" href="#exercise">Ćwiczenia na lewą rękę</a>
+                        <a class="training" href="#exercise">Ćwiczenia na kostkowanie</a>
+                        <a class="training" href="#exercise">Ćwiczenia rytmiczne</a>
+                        <a class="training" href="#exercise">Pająki</a>
+                        <a class="training" href="#exercise">Hammer-on'y i Pull-off'y</a>
+                        <a class="training" href="#exercise">Bendy</a>
+                        <a class="training" href="#exercise">Pomijanie strun</a>
+                        <a class="training" href="#exercise">Sweep Picking</a>
+                    </div>
+                </li>
+                <li><button class="dropdown-responsive__btn">Skale <i class="fas fa-sort-down"></i></button>
+                    <div class="dropdown-responsive">
+                        <a class="training" href="#exercise">Pentatoniki</a>
+                        <a class="training" href="#exercise">Skale Modalne</a>
+                        <a class="training" href="#exercise">Pasaże</a>
+                        <a class="training" href="#exercise">Harmoniczny mol</a>
+                        <a class="training" href="#exercise">Melodyczny mol</a>
+                    </div>
+                </li>
+                <li><span><a href="./chords.html">Akordy</a></span></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="hero-bg">
+        </div>
+        <div class="hero-text">
+            <h1>ScaleRunner</h1>
+            <p>Nie trać czasu i bierz się za schredowanie!</p>
+        </div>
+    </header>
+    <div class="metronome__container" id="clicker">
+        <div class="metronome-bg"></div>
+        <div class="metronome">
+            <div class="bpm-display">
+                <span class="tempo">140</span>
+                <span class="bpm">UNM</span>
+            </div>
+            <div class="tempo-settings">
+                <div class="adjust-tempo-btn decrease-tempo">-</div>
+                <input type="range" min="20" max="280" step="1" class="slider">
+                <div class="adjust-tempo-btn increase-tempo">+</div>
+            </div>
+            <div class="start-stop">START</div>
+            <div class="measures">
+                <div class="subtract-beats stepper">-</div>
+                <div class="measure-count">4</div>
+                <div class="add-beats stepper">+</div>
+            </div>
+            <span class="beats-per-measure-text">Uderzenia na akcent</span>
+        </div>
+
+    </div>
+
+
+
+
+    <main class="main-content">
+        <div id="home">
+            <section id="about">
+                <div class="about">
+                    <div class="container">
+                        <h2 class="section-title">CZYM JEST &nbsp; <span> ScaleRunner</span>&nbsp;?</h2>
+                        <p>Jest to zbiór najważniejszych ćwiczeń i zagadnień mających na celu przede wszystkim rozwój
+                            aspektu
+                            technicznego gry na gitarze. Aplikacja przeznaczona jest głównie dla początkujących
+                            gitarzystów,
+                            ale w przyszłości pojawią się ćwiczenia dla bardziej <span
+                                style="font-weight: 900;">zaawansowanych</span> wyjadaczy, ponieważ będzie
+                            ona ciągle rozwijana!</p>
+                    </div>
+                </div>
+            </section>
+            <section id="how-to-start">
+                <div class="how-to-start">
+                    <div class="container">
+                        <h2 class="section-title">Jak najlepiej zacząć naukę gry na gitarze i iść za ciosem?</h2>
+                        <p>W nauce gry na gitarze, najważniejszą kwestią jest <strong>wiedzieć co należy się
+                                uczyć</strong>,
+                            aby nie utkwić w
+                            miejscu. Oczywiste jest też, że nauka arcytrudnych rzeczy na początku przygody z gitarą
+                            nigdzie
+                            daleko nie zaprowadzi, a wręcz - tylko zniechęci.</p>
+                        <p style="font-weight: 600;">Niezwykle przydatnym narzędziem podczas ćwiczeń będzie również
+                            <span style="font-weight: 900;"> <a href="#clicker"
+                                    style="text-decoration: none; color: black; text-shadow: 1px 0px 1px black;">metronom</a></span>,
+                            który
+                            dobrze kształtuje poczucie
+                            rytmu. Początkujący gitarzyści powinni jak najwięcej grać z metronomem, aby w późniejszej
+                            grze
+                            nie gubić tempa. Złym nawykiem jest też przyspieszanie bicia metronomu, gdy robimy błędy na
+                            wolniejszych tempach - takie działanie jest bez sensu i nie uczymy się grać dokładnie. Na
+                            tempo
+                            przyjdzie pora!
+                        </p>
+                        <h4>A więc.....</h4>
+                    </div>
+                </div>
+            </section>
+            <section id="roadmap">
+                <div class="roadmap">
+                    <div class="container">
+                        <h2 class="section-title">Poniżej znajdziesz mapę, dzięki której dowiesz się jak najlepiej
+                            progresować ze ScaleRunner'em, rozpoczynając grę na gitarze:
+                        </h2>
+                    </div>
+
+                    <section class="steps-list">
+                        <ul>
+                            <li>
+                                <div class="container">
+                                    <div class="step">
+                                        <p>Na samym początku swojej gitarowej kariery, powinieneś / powinnaś nauczyć się
+                                            najprostszych rzeczy - wiedzieć jak nastroić gitarę oraz jak wymienić strunę
+                                            ( i to na właściwą! 😉 ). Są to umiejętności fundamentalne. Nie musisz umieć
+                                            stroić od razu ze słuchu, ponieważ żyjemy w XXI wieku i mamy wszelkiej maści
+                                            stroiki - nawet w aplikacjach. Dobrze jest wyrobić sobie nawyk, żeby stroić
+                                            wiosło przed <strong>każdą
+                                                sesją graniową</strong>. Skąd wiesz czy Twoje struny są wciąż dobrze
+                                            nastrojone? Wiedz, że nawet metalowe struny się nieustannie zużywają i
+                                            odkształcają - wymagają
+                                            <strong>systematycznego</strong> strojenia!
+                                        </p><br>
+                                        <p>CO WARTO SIĘ UCZYĆ NA TYM ETAPIE: <a href="./basics.html">Podstawy gry na
+                                                gitarze cz.
+                                                1</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container">
+                                    <div class="step">
+                                        <h3>Jeśli uda Ci się już okiełznać swoją gitarę i
+                                            wzmacniacz - do roboty!</h3>
+                                        <br>
+                                        <p>Ścieżki rozwoju są dwie: pierwsza - najlepiej zacząć od najprostszych, a
+                                            zarazem
+                                            popularnych melodii, które pozwolą Ci się technicznie rozwinąć. W razie
+                                            problemów możesz popatrzeć na tutoriale jak ludzie grają dany kawałek - nie
+                                            ma w
+                                            tym nic złego! </p>
+                                        <p> Druga ścieżka to rozwój poprzez granie ćwiczeń technicznych, ALE wiedz, że
+                                            przez
+                                            dłuższy czas grania ich, możesz nie dostrzec efektów nauki, ponieważ uczysz
+                                            się,
+                                            aby grać utwory, a nie drażliwe dla ucha ćwiczenia techniczne prawda?
+                                        </p><br>
+                                        <p>Jest to bez wątpienia najtrudniejszy etap do przebrnięcia podczas nauki, ale
+                                            gitara nie jest tylko dla wybranych ludzi - nauczyć się może każdy, jednak
+                                            nie
+                                            każdy będzie na tyle silny, aby utrzymać <b>systematyczność i motywację </b>
+                                            do
+                                            grania,
+                                            które będą Ci niezwykle potrzebne aby osiągnąć efekty. Godzina dziennie, lub
+                                            5h
+                                            w tygodniu to minimum, żeby po roku-dwóch móc w stanie nauczyć się większość
+                                            utworów. Z czasem jak już będziesz nabierać wprawy, a Twoje palce będą
+                                            przestawać się bać biegać po gryfie, możesz zająć się nauką podstawowych
+                                            skal i
+                                            wejść poziom wyżej. <span style="font-weight: bold;">NIE PODDAWAJ SIĘ i bądź
+                                                SYSTEMATYCZNY!</span></p><br>
+                                        <p>CO WARTO SIĘ UCZYĆ NA TYM ETAPIE: <a href="#">Podstawy gry na gitarze cz.
+                                                2</a>,
+                                            <a href="#">10 Prostych melodii</a>, <a href="#"> Chromatyka</a>, <a
+                                                href="#">Ćwiczenia na
+                                                lewą rękę</a>, <a href="#">Ćwiczenia na kostkowanie</a>, <a
+                                                href="#">Ćwiczenia rytmiczne </a>, <a href="#">Pająki</a>, <a
+                                                href="#">Podstawowe akordy</a>, <a href="#">Pentatoniki</a>, <a
+                                                href="#">Skale modalne</a>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container">
+                                    <div class="step">
+                                        <h3>Ogrywasz chromatykę i większość ćwiczeń w kosmicznych tempach na metronomie,
+                                            a
+                                            dalej nie potrafisz zagrać prostej solówki Metalliki? </h3><br>
+                                        <p>Do ogrywania trudniejszych rzeczy, gdzie dźwięków jest niezliczona ilość - z
+                                            pomocą przychodzą hammer-on'y i pull-off'y. Nie da się bowiem zagrać
+                                            wszystkich
+                                            dźwięków kostką (chyba że jesteś Paulem Gilbertem). Warto nauczyć się
+                                            string-skipping'u (pomijania strun), który daje czasem ciekawy efekt podczas
+                                            grania. Z pomocą przyjdzie Ci też umiejętność robienia poprawnych bendów
+                                            czyli
+                                            podciągania strun. Wszystko co zostało wymienione w tym paragrafie,
+                                            znajdziesz w
+                                            zakładce ĆWICZENIA. </p>
+                                        <p>CO WARTO SIĘ UCZYĆ NA TYM ETAPIE: <a href="#">Hammer-on'y i Pull-off'y</a>,
+                                            <a href="#">Bendy</a>, <a href="#">String skipping (pomijanie strun)</a>, <a
+                                                href="#">'Sweep picking'</a>, <a href="#">Pasaże</a>, <a
+                                                href="#">Harmoniczny mol</a>, <a href="#">Melodyczny mol</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container">
+                                    <div class="step">
+                                        <p>Wiesz już dużo o gitarowym schredingu, ale nie wiesz wszystkiego! 😁</p><br>
+                                        <p>Na tą część przyjdzie Ci trochę poczekać........</p><br>
+                                        <p>Nowe zagadnienia wkrótce!</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer>
+        <p> <span class="copyright">© Hubert Barecki <span class="date__year"></span> Wszelkie Prawa Zastrzeżone</span> <span
+                class="links">ScaleRunner.pl</span><span class="links"> <a href="https://github.com/Hubba2010" target="_blank"><i
+                        class="fab fa-github-square"></i></a> <a href="#"><i class="fab fa-linkedin"></i></a></span>
+        </p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/metronome.js" type="module"></script>
+    <script></script>
+    <script>
+        function refreshPage() {
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>
