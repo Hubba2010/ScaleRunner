@@ -16,7 +16,6 @@ let bpm = 140;
 let beatsPerMeasure = 4;
 let count = 0;
 let isRunning = false;
-let tempoTextString = 'Medium';
 
 decreaseTempoBtn.addEventListener('click', () => {
 	if (bpm <= 20) {

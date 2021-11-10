@@ -48,7 +48,7 @@ const dataArray = {
 		'Tutaj mix - podciąganie dźwięków ze skali eolskiej.',
 	],
 	String_skipping: [
-		'Technika, dająca ciekawe efekty brzmieniowe przy szybszych tempach, bardzo często wykorzystywana przez schrederów. String skipping (pomijanie strun) wymaga nie lada sprawności jeśli chodzi o swobodne przeskakiwanie kostki między strunami i przemieszczanie się po gryfie, dlatego jeśli tu jesteś, przygotuj się na niezłą ganiankę. Pierwsze ćwiczenie z bazą na strunie basowej i skakanie po kolei po pozostałych.',
+		'Technika, dająca ciekawe efekty brzmieniowe przy szybszych tempach, bardzo często wykorzystywana przez shrederów. String skipping (pomijanie strun) wymaga nie lada sprawności jeśli chodzi o swobodne przeskakiwanie kostki między strunami i przemieszczanie się po gryfie, dlatego jeśli tu jesteś, przygotuj się na niezłą ganiankę. Pierwsze ćwiczenie z bazą na strunie basowej i skakanie po kolei po pozostałych.',
 		'Skakanka po pasażach durowych w różnych partiach gryfu. Najlepiej myśleć tutaj akordami barowymi.',
 		"Tutaj musisz starać się zaczynać każdą pozycję od pierwszego palca. Niezłe ćwiczenie usprawniające bieganie dźwiękami ze skali string-skipping'iem po gryfie, a zarazem test Twojego kostkowania i rozciągłości palców.",
 	],
