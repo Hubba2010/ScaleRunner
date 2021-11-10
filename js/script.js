@@ -2,7 +2,7 @@
 
 ///////// Data to render exercises
 
-const cwiczenia = {
+const dataArray = {
 	Proste_melodie: [
 		'Ćwiczenie już Was nudzą? Spróbujcie zatem opanować kilka prostych popularnych melodyjek, które każdy powinien znać. W sumie całe te kawałki nie są takie trudne jak się wydają, ale pamiętajcie żeby się czegoś nauczyć, trzeba zawsze trochę posiedzieć :) Przed wami 5 łatwiutkich nutek, spróbujcie sami! Zacznijmy od......',
 		'Budka Suflera - Takie Tango (uwaga na bendy!)',
@@ -48,7 +48,7 @@ const cwiczenia = {
 		'Tutaj mix - podciąganie dźwięków ze skali eolskiej.',
 	],
 	String_skipping: [
-		'Technika, dająca ciekawe efekty brzmieniowe przy szybszych tempach, bardzo często wykorzystywana przez schrederów. String skipping (pomijanie strun) wymaga nie lada sprawności jeśli chodzi o swobodne przeskakiwanie kostki między strunami i przemieszczanie się po gryfie, dlatego jeśli tu jesteś, przygotuj się na niezłą ganiankę. Pierwsze ćwiczenie z bazą na strunie basowej i skakanie po kolei po pozostałych.',
+		'Technika, dająca ciekawe efekty brzmieniowe przy szybszych tempach, bardzo często wykorzystywana przez shrederów. String skipping (pomijanie strun) wymaga nie lada sprawności jeśli chodzi o swobodne przeskakiwanie kostki między strunami i przemieszczanie się po gryfie, dlatego jeśli tu jesteś, przygotuj się na niezłą ganiankę. Pierwsze ćwiczenie z bazą na strunie basowej i skakanie po kolei po pozostałych.',
 		'Skakanka po pasażach durowych w różnych partiach gryfu. Najlepiej myśleć tutaj akordami barowymi.',
 		"Tutaj musisz starać się zaczynać każdą pozycję od pierwszego palca. Niezłe ćwiczenie usprawniające bieganie dźwiękami ze skali string-skipping'iem po gryfie, a zarazem test Twojego kostkowania i rozciągłości palców.",
 	],
@@ -98,7 +98,7 @@ const cwiczenia = {
 	],
 };
 
-///////////////////
+/////////////////// Selectors
 
 const toggler = document.querySelector('.toggler');
 const hamburgerBtn = document.querySelector('.nav-hamburger');
@@ -110,6 +110,7 @@ const mainContent = document.querySelector('.main-content');
 const homePage = document.getElementById('home');
 const exercise = document.querySelectorAll('.training');
 const currentResponsive = document.querySelectorAll('.active-exercise');
+const footerYear = document.querySelector('.date__year');
 
 /////// HIDE / SHOW Navigation Buttons
 
@@ -155,14 +156,17 @@ exercise.forEach((item, index) => {
 			mainContent.removeChild(homePage);
 		}
 
-		// Must subtract 16 in case of clicking a responsive button
+		let itemID = index; // Get index to another variable to not change the original index ! !
+
+		// Must subtract 16 in case of clicking a responsive button to render exercises. Index is needed to get data from dataArray
 		if (index >= 16) {
-			index -= 16;
+			itemID -= 16; // You cant subtract from index here. Otherwise, after clicking a responsive button, you couldn't close the responsive menu later, beacuse the index would never be near 16
+			toggleNavBtns();
 		}
 		let insideText = exercise[index].textContent;
 
 		mainContent.innerHTML = `
-		<section class="exercise">	
+		<section class="exercise" id="exercise">	
 			<div class="container" id="one">
 				<h2 class="section-title">${insideText}</h2>
 			</div>		
@@ -170,16 +174,16 @@ exercise.forEach((item, index) => {
 				`;
 
 		// Get certain key values from data object
-		let keyValues = Object.values(cwiczenia)[index - 1];
-		console.log(keyValues);
+		let keyValues = Object.values(dataArray)[itemID - 1];
 
 		for (let i = 0; i < keyValues.length; i++) {
 			const mainContainer = document.getElementById('one');
 
 			mainContainer.innerHTML += `<p>${
-				Object.values(cwiczenia)[index - 1][i]
+				Object.values(dataArray)[itemID - 1][i]
 			}</p`;
-			mainContainer.innerHTML += `<img src="../img/cwiczenia/${insideText}/${i}.png" style="max-width: 1200px; width: 100%;">`;
+			mainContainer.innerHTML += `<img src="./img/cwiczenia/${insideText}/${i}.png" style="max-width: 1200px; width: 100%;">`;
+			console.log(insideText);
 		}
 
 		// Alert users on small screens to read tabs more easily, alert only once per subpage
@@ -193,10 +197,17 @@ exercise.forEach((item, index) => {
 		const current = document.getElementsByClassName(' active-exercise');
 		current[0].className = current[0].className.replace(' active-exercise', '');
 		current[0].className = current[0].className.replace(' active-exercise', '');
-		exercise[index].className += ' active-exercise';
-		exercise[index + 16].className += ' active-exercise';
-		console.log(index);
+		exercise[itemID].className += ' active-exercise';
+		exercise[itemID + 16].className += ' active-exercise';
 	});
 });
+
+///// Update year in footer :)
+
+const getCurrentYear = () => {
+	const year = (new Date).getFullYear();
+	footerYear.innerText = year;
+}
+getCurrentYear();
 
 ///////////////////////////////
